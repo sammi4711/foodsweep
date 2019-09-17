@@ -18,6 +18,7 @@
         <li><%= link_to "About", welcome_about_path %></li>
     
         <% if current_user %>
+          <li><%= link_to "My Grocery Lists", lists_index_path %></li>
           <li class="pull-right"><%= link_to "#{current_user.name} -Sign Out", session_path(current_user), method: :delete %></li>
         <% else %>
           <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>

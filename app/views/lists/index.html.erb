@@ -1,0 +1,12 @@
+
+<h1>All Grocery Lists</h1>
+<p><%= link_to "New Grocery List", lists_new_path, class: 'btn btn-success' %></p>
+<% @lists.each do |list| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to list.title, list %>
+      </h4>
+    </div>
+  </div>
+<% end %>

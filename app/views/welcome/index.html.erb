@@ -1,23 +1,28 @@
 <div class="jumbotron">
   <h1>Welcome to FoodSweep</h1>
-  <p>Revolutionizing the way you shop!</p>
-  <p>
-    <%= link_to "Sign In", new_session_path %> or
-    <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
-  </p>
+  <% if current_user %>
+    <p>Revolutionizing the way you shop!</p>
+  <% else %>
+    <p>Revolutionizing the way you shop!</p>
+    <p>
+      <%= link_to "Sign In", new_session_path %> or
+      <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
+    </p>
+  <% end %>
 </div>
  
 <div class="row">
   <div class="col-md-4">
-    <h2>PLACEHOLDER</h2>
-    <p>Placeholder</p>
+    <h2>News</h2>
+    <p>09/06/19: Wanting to surprise that special someone with a party or a gift and don't want them accidentally peeping at your party shopping list? Welcome our new capability to have Private lists!
+    <p>09/01/19: FoodSweep is now live! Happy shopping!</p>
   </div>
   <div class="col-md-4">
-    <h2>PLACEHOLDER</h2>
-    <p>Placeholder</p>
+    <h2>Why People Love FoodSweep:</h2>
+    <p>"It saves so much time! I have so much more free time to spend with my family now!" - Karen B.</p>
   </div>
   <div class="col-md-4">
-    <h2>PLACEHOLDER</h2>
-    <p>Placeholder</p>
+    <h2>Need help?</h2>
+    <p>Contact us at foodsweep@notreal.com</p>
   </div>
 </div>

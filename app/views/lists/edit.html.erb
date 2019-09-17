@@ -1,0 +1,38 @@
+<div class="col-md-8">
+<%= form_for @list do |f| %>
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+
+<div class="groceryItem" style="display:none">
+  <div class="form-group">
+    <%= check_box_tag 'purchased1' %>
+    <%= text_field_tag 'item1', nil, placeholder: " item 1" %>
+    <%= text_field_tag 'amount1', nil, placeholder: " amount 1" %>
+  </div>
+</div>
+
+<%# ^ This hidden div container exists because we want to have this pristine state available because the JS runs one time to get set up. If list edit is the first thing we visit, we want the JS to save the above, not the below, because we want it to load cleanly, not with data from the database. %>
+
+<%= f.label :items %>
+<div class="groceryItem">
+  <% @items.each do |key, item| -%>
+    <div class="form-group">
+      <%= check_box_tag 'purchased'+key, nil, item['purchased'] != '' %>
+      <%= text_field_tag 'item'+key, item['name'], placeholder: " item "+key %>
+      <%= text_field_tag 'amount'+key, item['amount'], placeholder: " amount "+key %>
+    </div>
+  <% end -%>
+</div>
+
+<%# ^ Same workings as in the new view, however here instead of nil we've loaded the values in, and we are looping through the items and making a set for each one. %>
+
+<button type="button" onclick="addItem()">Add Item</button>
+<%= hidden_field_tag 'nItems', @items.size %>
+
+<div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+</div>
+<% end %>
+</div>

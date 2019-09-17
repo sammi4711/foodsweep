@@ -1,0 +1,17 @@
+<h1><%= @list.title %></h1>
+ 
+<div class="row">
+  <div class="col-md-8">
+    <% @items.each do |key, item| -%>
+      <p style="<%= 'text-decoration: line-through' if item['purchased'] != '' %>"><%= item['name'] %> x <%= item['amount'] %></p>
+    <% end -%>
+  </div>
+
+  <%# ^ Loops and accesses the info to create a paragraph block for each item  %>
+  
+  <div>
+      <%= link_to "Edit", edit_list_path(@list), class: 'btn btn-success' %>
+      <%= link_to "Delete", @list, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this grocery list?'} %> 
+  </div>
+
+</div>
