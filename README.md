@@ -11,7 +11,9 @@ With FoodSweep, you and your friends can expedite the shopping process by having
 
 ---
 
-This app was created with Rails version 5.2.3 and Ruby version 2.6.3. Hosted at HEROKU.
+This app was created with Rails version 5.2.3 and Ruby version 2.6.3.
+Hosted at HEROKU.
+Run tests with command \$ rspec spec.
 
 Previous experience with the Rails framework includes:
 
@@ -47,7 +49,7 @@ For user authentication I specifically decided against using the Devise gem. It 
 
 A trade off I made was spending more time on getting the add item capability looking the way I wanted it, rather than spending time on extra features or doing much with the website design/styling. I did not want this project to essentially look the same as all my other projects, with the grocery lists mimicking the posts of Bloccit, the wikis of Blocipedia, and the audition notices of AuditionFish. On top of that I was very determined to make this project work without having to create and associate separate tables for the lists and the items on them. I wanted (and succeeded) for everything to be done only using one table to contain all the contents of the lists. I ended up having to delve really deep into unfamiliar territory to make this work, but once I was invested, there was no going back.
 
-If I'd had more time, I would have spent much more time experimenting with styling, as I don't want this project to look so much like my others. I also would have added email authentication during user sign up.
+If I'd had more time, I would have spent much more time experimenting with styling, as I don't want this project to look so much like my others. I also would have added email authentication during user sign up, and written more tests.
 
 At the moment, all users can edit all lists.
 Obviously, we need better security than that, as we can not trust users to not mess with lists that are not theirs. And if the user database became quite large, there would be an overload of lists on the list Index page, and users would have trouble finding their individual lists.

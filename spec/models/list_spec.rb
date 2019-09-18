@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe List, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:public) { true }
+  let(:list) { create(:list) }
 end
